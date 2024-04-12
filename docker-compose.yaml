@@ -3,9 +3,10 @@ version: '3.8'
 services:
   back:
       image: 'docker-spring-boot-postgres:latest'
-      build:
-        context: ./back
       container_name: back
+      volumes:
+        - ./back:/app/back
+      working_dir: '/app/back'
       depends_on:
         - db
       environment:
@@ -18,9 +19,12 @@ services:
       ports:
         - "8080:8086"
   front:
-    build:
-      context: ./front
+    image: 'node:lts-alpine'
     container_name: front
+    volumes:
+      - ./front:/app/front
+    working_dir: '/app/front'
+    entrypoint: ['npm', 'run', 'serve']
     ports:
       - "3000:8080"
   db:
