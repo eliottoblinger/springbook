@@ -1,5 +1,6 @@
 package com.eliottoblinger.springbook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.sql.Date;
@@ -25,6 +26,7 @@ public class User {
     private Set<Reservation> reservations;
 
     @OneToMany(mappedBy="user")
+    @JsonIgnore
     private Set<Room> rooms;
 
     @CreatedDate

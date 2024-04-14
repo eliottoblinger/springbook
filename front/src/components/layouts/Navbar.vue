@@ -45,24 +45,6 @@
               Rooms
             </RouterLink>
           </li>
-          <li>
-            <RouterLink
-              to="/reservations"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white"
-              :class="{ 'md:text-gray-700 md:dark:text-gray-500': route.name === 'reservations' }"
-            >
-              Reservations
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink
-              to="/users"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white"
-              :class="{ 'md:text-gray-700 md:dark:text-gray-500': route.name === 'users' }"
-            >
-              Users
-            </RouterLink>
-          </li>
         </ul>
       </div>
     </div>

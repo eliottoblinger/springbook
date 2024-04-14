@@ -20,6 +20,8 @@ public class Room {
 
     private Integer numberOfPersonsAllowed;
 
+    private String imageUrl;
+
     private Boolean areAnimalsAllowed;
 
     private Boolean isSmokingAllowed;
@@ -114,5 +116,13 @@ public class Room {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

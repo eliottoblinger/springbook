@@ -2,17 +2,23 @@ package com.eliottoblinger.springbook.dto;
 
 import com.eliottoblinger.springbook.model.Reservation;
 import com.eliottoblinger.springbook.model.User;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
 public class RoomRequest implements Serializable {
+    @NotEmpty(message = "Body param name should not be empty.")
+    @Size(min = 2, message = "Body param name should have at least 2 characters.")
     private String name;
 
     private String description;
 
     private Integer numberOfPersonsAllowed;
+
+    private String imageUrl;
 
     private Boolean areAnimalsAllowed;
 
@@ -33,6 +39,7 @@ public class RoomRequest implements Serializable {
             String name,
             String description,
             Integer numberOfPersonsAllowed,
+            String imageUrl,
             Boolean areAnimalsAllowed,
             Boolean isSmokingAllowed,
             Integer pricePerNight,
@@ -40,6 +47,7 @@ public class RoomRequest implements Serializable {
             Set<Reservation> reservations) {
         this.name = name;
         this.description = description;
+        this.imageUrl = imageUrl;
         this.numberOfPersonsAllowed = numberOfPersonsAllowed;
         this.areAnimalsAllowed = areAnimalsAllowed;
         this.isSmokingAllowed = isSmokingAllowed;
@@ -114,5 +122,13 @@ public class RoomRequest implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

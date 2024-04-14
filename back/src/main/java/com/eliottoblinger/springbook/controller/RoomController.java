@@ -48,6 +48,7 @@ public class RoomController {
         room.setAreAnimalsAllowed(request.getAreAnimalsAllowed());
         room.setIsSmokingAllowed(request.getIsSmokingAllowed());
         room.setNumberOfPersonsAllowed(request.getNumberOfPersonsAllowed());
+        room.setImageUrl(request.getImageUrl());
         room.setPricePerNight(request.getPricePerNight());
         room.setReservations(request.getReservations());
         room.setUser(request.getUser());
@@ -108,6 +109,10 @@ public class RoomController {
 
         if (request.getIsSmokingAllowed() != null) {
             room.setIsSmokingAllowed(request.getIsSmokingAllowed());
+        }
+
+        if (request.getImageUrl() != null) {
+            room.setImageUrl(request.getImageUrl());
         }
 
         if (request.getNumberOfPersonsAllowed() != null) {
