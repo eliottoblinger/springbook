@@ -4,7 +4,7 @@ import RoomsView from "@/modules/rooms/RoomsView.vue";
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },
-  { path: '/rooms', name: 'rooms', component: RoomsView },
+  { path: '/room/:id', name: 'room', component: RoomsView },
 ]
 
 export const router = createRouter({
